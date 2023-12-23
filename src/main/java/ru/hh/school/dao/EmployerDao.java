@@ -11,7 +11,6 @@ public class EmployerDao extends GenericDao {
   }
 
   /**
-   * TODO: здесь нужен метод, позволяющий сразу загрузить вакасии, связанные с работодателем и в некоторых случаях
    * избежать org.hibernate.LazyInitializationException
    * Также в запрос должен передаваться параметр employerId
    * <p>

@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-//TODO: оформите entity
 @Entity
 public class Employer {
   @Id()
@@ -22,7 +21,7 @@ public class Employer {
   @Column(name = "creation_time")
   private LocalDateTime creationTime;
 
-  @OneToMany(mappedBy = "employer", cascade = CascadeType.ALL)  //TODO почему не подходит persist
+  @OneToMany(mappedBy = "employer", cascade = CascadeType.ALL)
   private List<Vacancy> vacancies = new ArrayList<>();
 
   @Column(name = "block_time")

@@ -2,7 +2,6 @@ package ru.hh.school.entity;
 
 import javax.persistence.*;
 
-//TODO: оформите entity
 @Entity()
 public class Area {
   @Id

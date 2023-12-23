@@ -4,7 +4,6 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-//TODO: оформите entity
 @Entity
 public class Vacancy {
   @Id
