@@ -60,15 +60,14 @@ public class EmployerService {
       return;
     }
 
-    // TODO: сделать сохранение состояния работодателя и его вакансий
     // сейчас Employer в detached состоянии, т.к. сессия закрылась.
     // это нужно учитывать при последующей работе с таковым
     // про состояния: https://vladmihalcea.com/a-beginners-guide-to-jpa-hibernate-entity-state-transitions/
     // про возврат в managed состояние: https://vladmihalcea.com/jpa-persist-and-merge
-
     transactionHelper.inTransaction(() -> {
       employer.setBlockTime(LocalDateTime.now());
       employer.getVacancies().forEach(v -> v.setArchivingTime(LocalDateTime.now()));
+      genericDao.update(employer);
     });
   }
 
